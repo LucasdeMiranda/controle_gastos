@@ -48,7 +48,7 @@ namespace backend.Controllers
                 Pessoas = pessoas,
                 Totalreceita = totalreceita,
                 Totaldespesa = totaldespesa,
-                saldogeral = totalreceita - totaldespesa
+                Saldogeral = totalreceita - totaldespesa
             });
         }
     }

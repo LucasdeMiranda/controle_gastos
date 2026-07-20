@@ -8,6 +8,17 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//sem isos o navegador bloqueia sem o cors permite que aplicções rodando em portas diferentes conversem entrem si
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("React", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 // usa o banco de dados usa o appbdContext e conecta usando sqlite
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(
@@ -25,6 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("React");
 app.MapControllers();
 
 var summaries = new[]

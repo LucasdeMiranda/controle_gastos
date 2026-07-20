@@ -1,0 +1,94 @@
+.card {
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.card h2 {
+    margin-bottom:20px;
+    color:#1f2937;
+}
+
+.card h3 {
+    margin-top:25px;
+    margin-bottom:15px;
+    color:#374151;
+}
+
+.form {
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.form input,
+.form select {
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.form input:focus,
+.form select:focus {
+    outline:none;
+    border-color:#2563eb;
+}
+
+.form button {
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.form button:hover {
+    background:#1d4ed8;
+}
+
+.lista {
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.lista li {
+    background:#f9fafb;
+    border:1px solid #e5e7eb;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+ 
+.lista strong {
+    color:#111827;
+    font-size:17px;
+}
+ 
+.valor {
+
+    font-weight:bold;
+}
+.despesa {
+    color:#dc2626;
+}
+
+.receita {
+    color:#16a34a;
+}
+.erro {
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:15px;
+}

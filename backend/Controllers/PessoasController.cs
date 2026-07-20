@@ -6,6 +6,7 @@ using backend.Models;
 namespace backend.Controllers
 {
     [ApiController]
+    //esse controller é substituído pelo nome da classe sem o controller automaticamente
     [Route("api/[controller]")]
     public class PessoasController : ControllerBase
     {
@@ -19,6 +20,9 @@ namespace backend.Controllers
         [HttpPost]
         public IActionResult CriarPessoa(Pessoa pessoa)
         {
+            if (pessoa.Idade < 0){
+                 return BadRequest("Não é permitido idade negativa.");
+            }
             _context.Pessoas.Add(pessoa);
 
             _context.SaveChanges();
@@ -32,6 +36,7 @@ namespace backend.Controllers
             var pessoas = _context.Pessoas.ToList();
             return Ok(pessoas);
         }
+        //passa o id para saber qual pessoa excluir
         [HttpDelete("{id}")]
         public IActionResult ExcluirPessoa(int id)
         {
